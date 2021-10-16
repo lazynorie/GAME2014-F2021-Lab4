@@ -8,7 +8,8 @@ public class BulletBehaviour : MonoBehaviour
     [Range(0.0f, 0.5f)]
     public float speed;
     public Bounds bulletBounds;
-
+    public BulletDirection direction;
+    
     private BulletManager bulletManager;
 
     // Start is called before the first frame update
