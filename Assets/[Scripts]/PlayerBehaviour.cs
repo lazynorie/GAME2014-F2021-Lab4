@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Player Attack")] public Transform bulletSpawn;
     private Rigidbody2D rigidbody;
     private BulletManager _bulletManager;
+    public int frameDelay;
 
 
     // Start is called before the first frame update
@@ -60,9 +61,8 @@ public class PlayerBehaviour : MonoBehaviour
     private void CheckFire()
     {
        
-        if (Input.GetAxisRaw("Jump") > 0)
+        if ((Time.frameCount % frameDelay == 0) && (Input.GetAxisRaw("Jump") > 0))
         {
-            Debug.Log("Fire?");
             _bulletManager.GetBullet(bulletSpawn.position, BulletType.PLAYER);
 
         }

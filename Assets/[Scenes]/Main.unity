@@ -331,6 +331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffa7c2eb4e673ca4e857d18c28097bb5, type: 3}
+--- !u!4 &428806558 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4404526251757957296, guid: fd0c40e2984f341498fc140fe205d97b, type: 3}
+  m_PrefabInstance: {fileID: 5483275607223029314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &470396041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -979,6 +984,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5483275606954362864, guid: fd0c40e2984f341498fc140fe205d97b, type: 3}
+      propertyPath: frameDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483275606954362864, guid: fd0c40e2984f341498fc140fe205d97b, type: 3}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 428806558}
     - target: {fileID: 5483275606954362867, guid: fd0c40e2984f341498fc140fe205d97b, type: 3}
       propertyPath: m_RootOrder
       value: 3
