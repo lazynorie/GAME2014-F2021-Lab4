@@ -194,3 +194,4 @@ MonoBehaviour:
   bounds:
     min: -1.9
     max: 1.9
+  bulletSpwan: {fileID: 4404526251757957296}
