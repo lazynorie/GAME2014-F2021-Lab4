@@ -11,11 +11,28 @@ public class BulletBehaviour : MonoBehaviour
     public BulletDirection direction;
     
     private BulletManager bulletManager;
+    private Vector3 bulletVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         bulletManager = GameObject.FindObjectOfType<BulletManager>();
+
+        switch (direction)
+        {
+            case BulletDirection.UP:
+                bulletVelocity = new Vector3(0.0f, speed, 0.0f);
+                break;
+            case BulletDirection.DOWN:
+                bulletVelocity = new Vector3(0.0f, -speed, 0.0f);
+                break;
+            case BulletDirection.RIGHT:
+                bulletVelocity = new Vector3(speed, 0.0f, 0.0f);
+                break;
+            case BulletDirection.LEFT:
+                bulletVelocity = new Vector3(-speed, 0.0f, 0.0f);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -27,12 +44,23 @@ public class BulletBehaviour : MonoBehaviour
 
     private void Move()
     {
-        transform.position -= new Vector3(0.0f, speed, 0.0f);
+
+
+        transform.position += bulletVelocity;
     }
 
     private void CheckBounds()
     {
+        //Check bottom bounds
         if (transform.position.y < bulletBounds.max)
+        {
+            //Destroy(this.gameObject);
+
+            bulletManager.ReturnBullet(this.gameObject);
+        }
+        
+        //Check top bounds
+        if (transform.position.y > bulletBounds.min)
         {
             //Destroy(this.gameObject);
 
